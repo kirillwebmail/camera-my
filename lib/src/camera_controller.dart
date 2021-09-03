@@ -295,7 +295,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       _cameraId = await CameraPlatform.instance.createCamera(
         description,
         resolutionPreset,
-        enableTakePictureWithMaxResolution,
+        enableTakePictureWithMaxResolution: enableTakePictureWithMaxResolution,
         enableAudio: enableAudio,
       );
 
