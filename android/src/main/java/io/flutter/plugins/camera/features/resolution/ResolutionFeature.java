@@ -101,13 +101,25 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
   @VisibleForTesting
   static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset) {
-    if (preset.ordinal() > ResolutionPreset.high.ordinal()) {
-      preset = ResolutionPreset.high;
-    }
-
     CamcorderProfile profile =
         getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
-    return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+        
+     if (enableTakePictureWithMaxResolution) {
+      return cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)
+      Log.i("Camera", "enableTakePictureWithMaxResolution");
+      Log.i("Camera", "enableTakePictureWithMaxResolution");
+    } else {
+      return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    }
+    Log.i("Camera", "[Preview Resolution] :" + previewSize);
+    Log.i("Camera", "[Capture Resolution] :" + captureSize);
+
+    // if (preset.ordinal() > ResolutionPreset.high.ordinal()) {
+    //   preset = ResolutionPreset.high;
+    // }
+
+    
+    
   }
 
   /**
