@@ -223,7 +223,7 @@ class CameraController extends ValueNotifier<CameraValue> {
   CameraController(
     this.description,
     this.resolutionPreset, {
-    this.enableTakePictureWithMaxResolution = false,
+    this.enableTakePictureWithMaxResolution = true,
     this.enableAudio = true,
     this.imageFormatGroup,
   }) : super(const CameraValue.uninitialized());
@@ -295,7 +295,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       _cameraId = await CameraPlatform.instance.createCamera(
         description,
         resolutionPreset,
-        enableTakePictureWithMaxResolution: enableTakePictureWithMaxResolution,
+        enableTakePictureWithMaxResolution,
         enableAudio: enableAudio,
       );
 
