@@ -116,13 +116,16 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
 
-    if (enableTakePictureWithMaxResolution) {
-      return cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
-      Log.i("Camera", "enableTakePictureWithMaxResolution");
-      Log.i("Camera", "enableTakePictureWithMaxResolution");
-    } else {
-      return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
-    }
+    return cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+
+    // if (enableTakePictureWithMaxResolution) {
+    // return
+    // cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+    // Log.i("Camera", "enableTakePictureWithMaxResolution");
+    // Log.i("Camera", "enableTakePictureWithMaxResolution");
+    // } else {
+    // return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    // }
 
   }
 

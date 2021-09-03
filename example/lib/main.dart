@@ -48,6 +48,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   VideoPlayerController? videoController;
   VoidCallback? videoPlayerListener;
   bool enableAudio = true;
+  bool enableTakePictureWithMaxResolution = false;
   double _minAvailableExposureOffset = 0.0;
   double _maxAvailableExposureOffset = 0.0;
   double _currentExposureOffset = 0.0;
