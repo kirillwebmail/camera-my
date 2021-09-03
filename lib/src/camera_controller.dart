@@ -222,8 +222,8 @@ class CameraController extends ValueNotifier<CameraValue> {
   /// Creates a new camera controller in an uninitialized state.
   CameraController(
     this.description,
-    this.resolutionPreset, {
-    this.enableTakePictureWithMaxResolution = true,
+    this.resolutionPreset,
+    this.enableTakePictureWithMaxResolution, {
     this.enableAudio = true,
     this.imageFormatGroup,
   }) : super(const CameraValue.uninitialized());
