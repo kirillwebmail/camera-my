@@ -114,8 +114,13 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
 
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
-    Log.i("Camera", "[Preview Resolution] :" + preset);
     return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+  }
+
+  static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
+    // For still image captures, we use the largest available size.
+    return Collections.max(Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
+        new CompareSizesByArea());
   }
 
   /**
@@ -172,12 +177,23 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
   }
 
+  private static class CompareSizesByArea implements Comparator<Size> {
+    @Override
+    public int compare(Size lhs, Size rhs) {
+      // We cast here to ensure the multiplications won't overflow.
+      return Long.signum((long) lhs.getWidth() * lhs.getHeight() - (long) rhs.getWidth() * rhs.getHeight());
+    }
+  }
+
   private void configureResolution(ResolutionPreset resolutionPreset, int cameraId) {
     if (!checkIsSupported()) {
       return;
     }
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
-    captureSize = new Size(recordingProfile.videoFrameWidth, recordingProfile.videoFrameHeight);
+    captureSize = computeBestCaptureSize(
+        cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP));
+    // captureSize = new Size(recordingProfile.videoFrameWidth,
+    // recordingProfile.videoFrameHeight);
     previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
   }
 }
