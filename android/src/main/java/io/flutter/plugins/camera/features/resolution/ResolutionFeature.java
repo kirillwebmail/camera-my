@@ -5,6 +5,7 @@
 package io.flutter.plugins.camera.features.resolution;
 
 import android.hardware.camera2.CaptureRequest;
+import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.CamcorderProfile;
 import android.util.Size;
 import androidx.annotation.VisibleForTesting;
