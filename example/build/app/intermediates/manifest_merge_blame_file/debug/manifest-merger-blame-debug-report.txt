@@ -1,0 +1,79 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.flutter.plugins.cameraexample"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-feature
+11-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:22:3-24:30
+12        android:name="android.hardware.camera"
+12-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:23:5-43
+13        android:required="true" />
+13-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:24:5-28
+14
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:26:3-64
+15-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:26:20-62
+16    <uses-permission android:name="android.permission.FLASHLIGHT" />
+16-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:27:3-66
+16-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:27:20-64
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->[:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-65
+17-->[:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-62
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->[:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-71
+18-->[:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-68
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:24:5-79
+19-->[com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:24:22-76
+20
+21    <application
+21-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:4:3-20:17
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:5:5-39
+25        android:label="camera_example" >
+25-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:6:5-35
+26        <activity
+26-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:7:5-18:16
+27            android:name="io.flutter.embedding.android.FlutterActivity"
+27-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:11:7-66
+28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
+28-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:8:7-100
+29            android:hardwareAccelerated="true"
+29-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:9:7-41
+30            android:launchMode="singleTop"
+30-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:10:7-37
+31            android:theme="@style/LaunchTheme"
+31-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:12:7-41
+32            android:windowSoftInputMode="adjustResize" >
+32-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:13:7-49
+33            <intent-filter>
+33-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:14:7-17:23
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:15:9-60
+34-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:15:17-58
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:16:9-68
+36-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:16:19-66
+37            </intent-filter>
+38        </activity>
+39
+40        <meta-data
+40-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:19:5-67
+41            android:name="flutterEmbedding"
+41-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:19:16-47
+42            android:value="2" />
+42-->/Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:19:48-65
+43    </application>
+44
+45</manifest>

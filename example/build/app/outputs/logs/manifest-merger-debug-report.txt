@@ -1,0 +1,194 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+MERGED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-10:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/kirillkaluznyj/_Projects/camera-my/example/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:integration_test] /Users/kirillkaluznyj/_Projects/camera-my/example/build/integration_test/intermediates/library_manifest/debug/AndroidManifest.xml:7:1-12:12
+MERGED from [:video_player] /Users/kirillkaluznyj/_Projects/camera-my/example/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /Users/kirillkaluznyj/_Projects/camera-my/example/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.test:rules:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/029cdcfbf0ebe7376d8e45354258f93c/rules-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/42907b701c105a9e89cd617f26e21c9b/espresso-core-3.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:runner:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/d4ca4a9726a211c021967cba9efd3852/runner-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/4b5121cd6b11c311f680195caceb7c18/exoplayer-hls-2.14.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/baa44f9a8ca9546cdcde25114072afbc/exoplayer-dash-2.14.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/89697534072ec675a8b59b8b201a179c/exoplayer-smoothstreaming-2.14.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/412798c5ff5129715d71e58ff213e3a7/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/36b6b089b86a4b53f161d1de646d1e60/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2b55f4dd1ddfb477bff2667016cc0a25/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/7d95adf5b88dd1f9089b34bd4d2e8a93/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/65668fdc6b75dc53c12b7eb5f279be35/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/9e68ec229c62f3dc7a285423839a92f2/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0691a1a6c3d055bc7ae9d66ba6bc80fa/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/a72cc53d82cf5702357646245a6e016a/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/439f22ecfa3eb2cee779567eba299ed4/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.test:monitor:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/8a7fef1ce535e4e2cc3ac86135d37fca/monitor-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/17eb386568aea34497cebf20ba583add/jetified-exoplayer-extractor-2.14.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2749a66efd9d95d7656dfa570e336bc6/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/e5d23450977c2b96e566605cba9e8c80/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0bf15744f5224b117e4e3c989895e24a/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/73dec8f06dda83861b05ec84e654c876/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6bb7aa73595352fa4f6197009ccaae9f/espresso-idling-resource-3.2.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+	package
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:2:3-45
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:1-28:12
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:4:3-20:17
+MERGED from [androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0bf15744f5224b117e4e3c989895e24a/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0bf15744f5224b117e4e3c989895e24a/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:6:5-35
+	android:icon
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:5:5-39
+activity#io.flutter.embedding.android.FlutterActivity
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:7:5-18:16
+	android:launchMode
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:10:7-37
+	android:hardwareAccelerated
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:9:7-41
+	android:windowSoftInputMode
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:13:7-49
+	android:configChanges
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:8:7-100
+	android:theme
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:12:7-41
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:11:7-66
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:14:7-17:23
+action#android.intent.action.MAIN
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:15:9-60
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:15:17-58
+category#android.intent.category.LAUNCHER
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:16:9-68
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:16:19-66
+meta-data#flutterEmbedding
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:19:5-67
+	android:value
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:19:48-65
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:19:16-47
+uses-feature#android.hardware.camera
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:22:3-24:30
+	android:required
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:24:5-28
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:23:5-43
+uses-permission#android.permission.INTERNET
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:26:3-64
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:26:20-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:27:3-66
+	android:name
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml:27:20-64
+uses-sdk
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+MERGED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/kirillkaluznyj/_Projects/camera-my/example/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/kirillkaluznyj/_Projects/camera-my/example/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:integration_test] /Users/kirillkaluznyj/_Projects/camera-my/example/build/integration_test/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-44
+MERGED from [:integration_test] /Users/kirillkaluznyj/_Projects/camera-my/example/build/integration_test/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-44
+MERGED from [:video_player] /Users/kirillkaluznyj/_Projects/camera-my/example/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:video_player] /Users/kirillkaluznyj/_Projects/camera-my/example/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/kirillkaluznyj/_Projects/camera-my/example/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/kirillkaluznyj/_Projects/camera-my/example/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [androidx.test:rules:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/029cdcfbf0ebe7376d8e45354258f93c/rules-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:rules:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/029cdcfbf0ebe7376d8e45354258f93c/rules-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/42907b701c105a9e89cd617f26e21c9b/espresso-core-3.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/42907b701c105a9e89cd617f26e21c9b/espresso-core-3.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/d4ca4a9726a211c021967cba9efd3852/runner-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/d4ca4a9726a211c021967cba9efd3852/runner-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/4b5121cd6b11c311f680195caceb7c18/exoplayer-hls-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/4b5121cd6b11c311f680195caceb7c18/exoplayer-hls-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/baa44f9a8ca9546cdcde25114072afbc/exoplayer-dash-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/baa44f9a8ca9546cdcde25114072afbc/exoplayer-dash-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/89697534072ec675a8b59b8b201a179c/exoplayer-smoothstreaming-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/89697534072ec675a8b59b8b201a179c/exoplayer-smoothstreaming-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/412798c5ff5129715d71e58ff213e3a7/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/412798c5ff5129715d71e58ff213e3a7/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/36b6b089b86a4b53f161d1de646d1e60/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/36b6b089b86a4b53f161d1de646d1e60/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2b55f4dd1ddfb477bff2667016cc0a25/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2b55f4dd1ddfb477bff2667016cc0a25/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/7d95adf5b88dd1f9089b34bd4d2e8a93/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/7d95adf5b88dd1f9089b34bd4d2e8a93/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/65668fdc6b75dc53c12b7eb5f279be35/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/65668fdc6b75dc53c12b7eb5f279be35/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/9e68ec229c62f3dc7a285423839a92f2/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/9e68ec229c62f3dc7a285423839a92f2/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0691a1a6c3d055bc7ae9d66ba6bc80fa/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0691a1a6c3d055bc7ae9d66ba6bc80fa/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/a72cc53d82cf5702357646245a6e016a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/a72cc53d82cf5702357646245a6e016a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/439f22ecfa3eb2cee779567eba299ed4/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/439f22ecfa3eb2cee779567eba299ed4/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test:monitor:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/8a7fef1ce535e4e2cc3ac86135d37fca/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/8a7fef1ce535e4e2cc3ac86135d37fca/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/17eb386568aea34497cebf20ba583add/jetified-exoplayer-extractor-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/17eb386568aea34497cebf20ba583add/jetified-exoplayer-extractor-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2749a66efd9d95d7656dfa570e336bc6/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2749a66efd9d95d7656dfa570e336bc6/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/e5d23450977c2b96e566605cba9e8c80/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/e5d23450977c2b96e566605cba9e8c80/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0bf15744f5224b117e4e3c989895e24a/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/0bf15744f5224b117e4e3c989895e24a/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/73dec8f06dda83861b05ec84e654c876/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/73dec8f06dda83861b05ec84e654c876/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6bb7aa73595352fa4f6197009ccaae9f/espresso-idling-resource-3.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6bb7aa73595352fa4f6197009ccaae9f/espresso-idling-resource-3.2.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kirillkaluznyj/_Projects/camera-my/example/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-71
+	android:name
+		ADDED from [:camera] /Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-68
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2749a66efd9d95d7656dfa570e336bc6/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/2749a66efd9d95d7656dfa570e336bc6/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/fccea3c255fdb5067cd45afccafa077a/exoplayer-core-2.14.1/AndroidManifest.xml:24:22-76
