@@ -114,6 +114,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
 
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
+    Log.i("Camera", "[Preview Resolution] :" + preset);
     return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
   }
 
@@ -177,6 +178,6 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
     captureSize = new Size(recordingProfile.videoFrameWidth, recordingProfile.videoFrameHeight);
-    previewSize = new Size(recordingProfile.videoFrameWidth, recordingProfile.videoFrameHeight);
+    previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
   }
 }
