@@ -25,7 +25,7 @@ class CameraPreview extends StatelessWidget {
             valueListenable: controller,
             builder: (context, value, child) {
               return AspectRatio(
-                aspectRatio: 4 / 3,
+                aspectRatio: 3/4,
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
