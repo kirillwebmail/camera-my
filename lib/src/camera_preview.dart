@@ -24,16 +24,12 @@ class CameraPreview extends StatelessWidget {
         ? ValueListenableBuilder(
             valueListenable: controller,
             builder: (context, value, child) {
-              return AspectRatio(
-                aspectRatio: 4 / 3,
-                child: Stack(
-                  fit: StackFit.expand,
+              return Stack(
                   children: [
                     _wrapInRotatedBox(child: controller.buildPreview()),
                     child ?? Container(),
                   ],
-                ),
-              );
+                );
             },
             child: child,
           )
