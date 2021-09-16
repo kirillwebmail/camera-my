@@ -209,7 +209,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
 
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
-    captureSize = computeBestCaptureSize(resolutionPreset, cameraId,
+    captureSize = computeBestCaptureSize(cameraId, resolutionPreset,
         cameraProperties.getAvailableScalerStreamConfigurationMap());
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
