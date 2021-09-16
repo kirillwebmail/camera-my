@@ -124,7 +124,8 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
 
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
-    return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    // return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    return new Size(3000, 4000);
   }
 
   static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
@@ -205,6 +206,6 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
     // previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
-    previewSize = Size(4000.0, 3000.0);
+    previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
   }
 }
