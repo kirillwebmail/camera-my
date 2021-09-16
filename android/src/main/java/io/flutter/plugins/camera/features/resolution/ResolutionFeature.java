@@ -123,10 +123,9 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     // preset = ResolutionPreset.high;
     // }
 
-    // CamcorderProfile profile =
-    // getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
-    // return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
-    return new Size(768, 1024);
+    CamcorderProfile profile = CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_HIGH);
+    return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    // return new Size(768, 1024);
   }
 
   static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
