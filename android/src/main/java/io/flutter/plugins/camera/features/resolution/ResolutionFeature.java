@@ -204,6 +204,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap());
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
-    previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
+    // previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
+    previewSize = Size(4000.0, 3000.0);
   }
 }
