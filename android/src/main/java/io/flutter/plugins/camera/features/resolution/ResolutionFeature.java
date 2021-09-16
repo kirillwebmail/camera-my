@@ -118,8 +118,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   }
 
   @VisibleForTesting
-  static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset,
-      StreamConfigurationMap streamConfigurationMap) {
+  static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset) {
     // if (preset.ordinal() > ResolutionPreset.high.ordinal()) {
     // preset = ResolutionPreset.high;
     // }
