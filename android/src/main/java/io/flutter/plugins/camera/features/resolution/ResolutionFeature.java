@@ -124,7 +124,9 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     // }
 
     CamcorderProfile profile = CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_HIGH);
-    return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+
+    return new Size(profile.videoFrameHeight * 3 / 4, profile.videoFrameHeight);
+
     // return new Size(6936, 9248);
   }
 
