@@ -9,7 +9,7 @@
     },
     {
       "name": "async",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.6.1",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -39,7 +39,7 @@
     },
     {
       "name": "charcode",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -81,7 +81,7 @@
     },
     {
       "name": "file",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.0",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -141,7 +141,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.3.0",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -201,7 +201,7 @@
     },
     {
       "name": "process",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.1",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -261,7 +261,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -297,7 +297,7 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-6.2.0",
+      "rootUri": "file:///Users/kirillkaluznyj/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-7.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -326,7 +326,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-07T12:43:13.414584Z",
+  "generated": "2021-09-18T12:38:44.852088Z",
   "generator": "pub",
-  "generatorVersion": "2.13.4"
+  "generatorVersion": "2.14.0"
 }
