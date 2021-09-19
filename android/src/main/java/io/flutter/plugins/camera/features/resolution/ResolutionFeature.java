@@ -8,6 +8,7 @@ import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.CamcorderProfile;
 import android.util.Size;
+import android.util.Log;
 import android.graphics.ImageFormat;
 import android.hardware.camera2.CameraCharacteristics;
 import androidx.annotation.VisibleForTesting;
@@ -124,7 +125,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     // }
 
     CamcorderProfile profile = CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_HIGH);
-
+    Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
     return new Size(profile.videoFrameHeight * 3 / 4, profile.videoFrameHeight);
 
     // return new Size(6936, 9248);
