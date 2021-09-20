@@ -240,8 +240,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
           Log.w(TAG, "********" + resolutionFeature.getPreviewSize().getWidth() + "*********"
               + resolutionFeature.getPreviewSize().getHeight());
 
-          dartMessenger.sendCameraInitializedEvent(resolutionFeature.getPreviewSize().getWidth(),
-              resolutionFeature.getPreviewSize().getHeight(), cameraFeatures.getExposureLock().getValue(),
+          dartMessenger.sendCameraInitializedEvent(1620, 2160, cameraFeatures.getExposureLock().getValue(),
               cameraFeatures.getAutoFocus().getValue(), cameraFeatures.getExposurePoint().checkIsSupported(),
               cameraFeatures.getFocusPoint().checkIsSupported());
         } catch (CameraAccessException e) {
