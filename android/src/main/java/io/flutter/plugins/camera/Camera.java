@@ -237,7 +237,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
         cameraDevice = device;
         try {
           startPreview();
-          Log.w(TAG, "********" + resolutionFeature.getPreviewSize().getWidth() * 3 / 4 + "*********"
+          Log.w(TAG, "********" + resolutionFeature.getPreviewSize().getHeight() * 3 / 4 + "*********"
               + resolutionFeature.getPreviewSize().getHeight());
 
           dartMessenger.sendCameraInitializedEvent(resolutionFeature.getPreviewSize().getHeight() * 3 / 4,
