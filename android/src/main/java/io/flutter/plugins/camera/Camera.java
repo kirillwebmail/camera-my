@@ -343,7 +343,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
         Log.i(TAG, "Updating builder settings");
         updateBuilderSettings(previewRequestBuilder);
         Log.i(TAG, "updateBuilderSettings");
-        Log.i(TAG, previewRequestBuilder);
+        Log.i(TAG, previewRequestBuilder.toString());
         refreshPreviewCaptureSession(onSuccessCallback, (code, message) -> dartMessenger.sendCameraErrorEvent(message));
       }
 
@@ -918,8 +918,8 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     if (pictureImageReader == null || pictureImageReader.getSurface() == null)
       return;
     Log.i(TAG, "startPreview");
-    Log.i(TAG, CameraDevice.TEMPLATE_PREVIEW);
-    Log.i(TAG, pictureImageReader.getSurface());
+    // Log.i(TAG, CameraDevice.TEMPLATE_PREVIEW);
+    Log.i(TAG, pictureImageReader.getSurface().toString());
     createCaptureSession(CameraDevice.TEMPLATE_PREVIEW, pictureImageReader.getSurface());
   }
 
