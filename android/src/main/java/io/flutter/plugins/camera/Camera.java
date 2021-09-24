@@ -307,13 +307,13 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
 
     // Create a new capture builder.
     previewRequestBuilder = cameraDevice.createCaptureRequest(templateType);
-    Log.w(TAG, "++++++" + resolutionFeature.getPreviewSize().getHeight() * 3 / 4 + "++++++++"
-        + resolutionFeature.getPreviewSize().getHeight());
+
     // Build Flutter surface to render to.
     ResolutionFeature resolutionFeature = cameraFeatures.getResolution();
     SurfaceTexture surfaceTexture = flutterTexture.surfaceTexture();
     surfaceTexture.setDefaultBufferSize(resolutionFeature.getPreviewSize().getHeight() * 3 / 4,
         resolutionFeature.getPreviewSize().getHeight());
+    Log.w(TAG, "++++++" + surfaceTexture);
     Surface flutterSurface = new Surface(surfaceTexture);
     previewRequestBuilder.addTarget(flutterSurface);
 
