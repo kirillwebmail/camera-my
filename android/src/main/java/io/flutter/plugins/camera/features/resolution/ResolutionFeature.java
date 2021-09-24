@@ -129,7 +129,13 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
     Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
 
-    return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    if (profile.videoFrameHeight / profile.videoFrameWidth != 0.75) {
+      Log.w(TAG, "++++++" + profile.videoFrameWidth + "++++++" + profile.videoFrameHeight);
+      return new Size(profile.videoFrameWidth, profile.videoFrameWidth * 3 / 4);
+    } else {
+      Log.w(TAG, "++++++" + profile.videoFrameWidth + "++++++" + profile.videoFrameWidth * 3 / 4);
+      return new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+    }
   }
 
   static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
