@@ -226,7 +226,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
       Log.w(TAG, "The selected imageFormatGroup is not supported by Android. Defaulting to yuv420");
       imageFormat = ImageFormat.YUV_420_888;
     }
-    imageStreamReader = ImageReader.newInstance(resolutionFeature.getPreviewSize().getHeight() * 3 / 4,
+    imageStreamReader = ImageReader.newInstance(resolutionFeature.getPreviewSize().getWidth(),
         resolutionFeature.getPreviewSize().getHeight(), imageFormat, 1);
 
     // Open the camera.
@@ -237,10 +237,10 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
         cameraDevice = device;
         try {
           startPreview();
-          Log.w(TAG, "********" + resolutionFeature.getPreviewSize().getHeight() * 3 / 4 + "*********"
+          Log.w(TAG, "********" + resolutionFeature.getPreviewSize().getWidth() + "*********"
               + resolutionFeature.getPreviewSize().getHeight());
 
-          dartMessenger.sendCameraInitializedEvent(resolutionFeature.getPreviewSize().getHeight() * 3 / 4,
+          dartMessenger.sendCameraInitializedEvent(resolutionFeature.getPreviewSize().getWidth(),
               resolutionFeature.getPreviewSize().getHeight(), cameraFeatures.getExposureLock().getValue(),
               cameraFeatures.getAutoFocus().getValue(), cameraFeatures.getExposurePoint().checkIsSupported(),
               cameraFeatures.getFocusPoint().checkIsSupported());
@@ -311,9 +311,8 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     // Build Flutter surface to render to.
     ResolutionFeature resolutionFeature = cameraFeatures.getResolution();
     SurfaceTexture surfaceTexture = flutterTexture.surfaceTexture();
-    surfaceTexture.setDefaultBufferSize(resolutionFeature.getPreviewSize().getHeight() * 3 / 4,
+    surfaceTexture.setDefaultBufferSize(resolutionFeature.getPreviewSize().getWidth(),
         resolutionFeature.getPreviewSize().getHeight());
-    Log.w(TAG, "++++++" + surfaceTexture);
     Surface flutterSurface = new Surface(surfaceTexture);
     previewRequestBuilder.addTarget(flutterSurface);
 
@@ -344,7 +343,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
         Log.i(TAG, "Updating builder settings");
         updateBuilderSettings(previewRequestBuilder);
         Log.i(TAG, "updateBuilderSettings");
-        Log.i(TAG, previewRequestBuilder.toString());
+        Log.i(TAG, previewRequestBuilder);
         refreshPreviewCaptureSession(onSuccessCallback, (code, message) -> dartMessenger.sendCameraErrorEvent(message));
       }
 
@@ -919,8 +918,8 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     if (pictureImageReader == null || pictureImageReader.getSurface() == null)
       return;
     Log.i(TAG, "startPreview");
-    // Log.i(TAG, CameraDevice.TEMPLATE_PREVIEW);
-    Log.i(TAG, pictureImageReader.getSurface().toString());
+    Log.i(TAG, CameraDevice.TEMPLATE_PREVIEW);
+    Log.i(TAG, pictureImageReader.getSurface());
     createCaptureSession(CameraDevice.TEMPLATE_PREVIEW, pictureImageReader.getSurface());
   }
 
