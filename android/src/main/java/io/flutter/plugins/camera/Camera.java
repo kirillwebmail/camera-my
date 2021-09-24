@@ -226,7 +226,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
       Log.w(TAG, "The selected imageFormatGroup is not supported by Android. Defaulting to yuv420");
       imageFormat = ImageFormat.YUV_420_888;
     }
-    imageStreamReader = ImageReader.newInstance(resolutionFeature.getPreviewSize().getWidth(),
+    imageStreamReader = ImageReader.newInstance(resolutionFeature.getPreviewSize().getHeight() * 3 / 4,
         resolutionFeature.getPreviewSize().getHeight(), imageFormat, 1);
 
     // Open the camera.
