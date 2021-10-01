@@ -148,7 +148,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getWidth());
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
-    return newCaptureSize;
+    return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth() * 3 / 4);
   }
 
   /**
