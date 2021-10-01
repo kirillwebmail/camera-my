@@ -140,8 +140,14 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
   static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
     // For still image captures, we use the largest available size.
-    return Collections.max(Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
+    Size newCaptureSize = Collections.max(Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
         new CompareSizesByArea());
+
+    Log.w(TAG, "000000" + newCaptureSize);
+    Log.w(TAG, "000000" + newCaptureSize.getWidth);
+    Log.w(TAG, "000000" + newCaptureSize.getHeight);
+
+    return newCaptureSize;
   }
 
   /**
@@ -214,7 +220,6 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
     captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap());
-    Log.w(TAG, "000000" + captureSize);
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
     previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
