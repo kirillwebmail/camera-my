@@ -139,13 +139,14 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   }
 
   static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
+    final String TAG = "Camera";
     // For still image captures, we use the largest available size.
     Size newCaptureSize = Collections.max(Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
         new CompareSizesByArea());
 
     Log.w(TAG, "000000" + newCaptureSize);
-    Log.w(TAG, "000000" + newCaptureSize.getWidth);
-    Log.w(TAG, "000000" + newCaptureSize.getHeight);
+    Log.w(TAG, "000000   " + newCaptureSize[0]);
+    Log.w(TAG, "000000   " + newCaptureSize[1]);
 
     return newCaptureSize;
   }
