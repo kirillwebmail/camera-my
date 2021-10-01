@@ -145,8 +145,8 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
         new CompareSizesByArea());
 
     Log.w(TAG, "000000" + newCaptureSize);
-    Log.w(TAG, "000000   " + newCaptureSize[0]);
-    Log.w(TAG, "000000   " + newCaptureSize[1]);
+    Log.w(TAG, "000000   " + newCaptureSize.height);
+    Log.w(TAG, "000000   " + newCaptureSize.width);
 
     return newCaptureSize;
   }
