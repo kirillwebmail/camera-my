@@ -207,13 +207,14 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   }
 
   private void configureResolution(ResolutionPreset resolutionPreset, int cameraId) {
+    final String TAG = "Camera";
     if (!checkIsSupported()) {
       return;
     }
 
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
     captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap());
-    Log.w(TAG, "000000" + captureSize.videoFrameWidth + "000000" + captureSize.videoFrameWidth);
+    Log.w(TAG, "000000" + captureSize);
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
     previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
