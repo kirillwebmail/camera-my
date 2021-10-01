@@ -148,7 +148,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getWidth());
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
-    if (profile.videoFrameHeight / profile.videoFrameWidth != 0.75) {
+    if (newCaptureSize.getHeight() / newCaptureSize.getWidth() != 0.75) {
       return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth() * 3 / 4);
     } else {
 
