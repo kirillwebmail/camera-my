@@ -101,6 +101,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
 
   private final SurfaceTextureEntry flutterTexture;
   private final boolean enableAudio;
+  private final boolean isSquare;
   private final Context applicationContext;
   private final DartMessenger dartMessenger;
   private final CameraProperties cameraProperties;
@@ -141,20 +142,22 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
 
   public Camera(final Activity activity, final SurfaceTextureEntry flutterTexture,
       final CameraFeatureFactory cameraFeatureFactory, final DartMessenger dartMessenger,
-      final CameraProperties cameraProperties, final ResolutionPreset resolutionPreset, final boolean enableAudio) {
+      final CameraProperties cameraProperties, final ResolutionPreset resolutionPreset, final boolean enableAudio,
+      final boolean isSquare) {
 
     if (activity == null) {
       throw new IllegalStateException("No activity available!");
     }
     this.activity = activity;
     this.enableAudio = enableAudio;
+    this.isSquare = isSquare;
     this.flutterTexture = flutterTexture;
     this.dartMessenger = dartMessenger;
     this.applicationContext = activity.getApplicationContext();
     this.cameraProperties = cameraProperties;
     this.cameraFeatureFactory = cameraFeatureFactory;
     this.cameraFeatures = CameraFeatures.init(cameraFeatureFactory, cameraProperties, activity, dartMessenger,
-        resolutionPreset);
+        resolutionPreset, isSquare);
 
     // Create capture callback.
     captureTimeouts = new CaptureTimeoutsWrapper(3000, 3000);
@@ -273,23 +276,23 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
         close();
         String errorDescription;
         switch (errorCode) {
-          case ERROR_CAMERA_IN_USE:
-            errorDescription = "The camera device is in use already.";
-            break;
-          case ERROR_MAX_CAMERAS_IN_USE:
-            errorDescription = "Max cameras in use";
-            break;
-          case ERROR_CAMERA_DISABLED:
-            errorDescription = "The camera device could not be opened due to a device policy.";
-            break;
-          case ERROR_CAMERA_DEVICE:
-            errorDescription = "The camera device has encountered a fatal error";
-            break;
-          case ERROR_CAMERA_SERVICE:
-            errorDescription = "The camera service has encountered a fatal error.";
-            break;
-          default:
-            errorDescription = "Unknown camera error";
+        case ERROR_CAMERA_IN_USE:
+          errorDescription = "The camera device is in use already.";
+          break;
+        case ERROR_MAX_CAMERAS_IN_USE:
+          errorDescription = "Max cameras in use";
+          break;
+        case ERROR_CAMERA_DISABLED:
+          errorDescription = "The camera device could not be opened due to a device policy.";
+          break;
+        case ERROR_CAMERA_DEVICE:
+          errorDescription = "The camera device has encountered a fatal error";
+          break;
+        case ERROR_CAMERA_SERVICE:
+          errorDescription = "The camera service has encountered a fatal error.";
+          break;
+        default:
+          errorDescription = "Unknown camera error";
         }
         dartMessenger.sendCameraErrorEvent(errorDescription);
       }
@@ -778,30 +781,30 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
      */
     if (!pausedPreview) {
       switch (newMode) {
-        case locked:
-          // Perform a single focus trigger.
-          if (captureSession == null) {
-            Log.i(TAG, "[unlockAutoFocus] captureSession null, returning");
-            return;
-          }
-          lockAutoFocus();
+      case locked:
+        // Perform a single focus trigger.
+        if (captureSession == null) {
+          Log.i(TAG, "[unlockAutoFocus] captureSession null, returning");
+          return;
+        }
+        lockAutoFocus();
 
-          // Set AF state to idle again.
-          previewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_IDLE);
+        // Set AF state to idle again.
+        previewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_IDLE);
 
-          try {
-            captureSession.setRepeatingRequest(previewRequestBuilder.build(), null, backgroundHandler);
-          } catch (CameraAccessException e) {
-            if (result != null) {
-              result.error("setFocusModeFailed", "Error setting focus mode: " + e.getMessage(), null);
-            }
-            return;
+        try {
+          captureSession.setRepeatingRequest(previewRequestBuilder.build(), null, backgroundHandler);
+        } catch (CameraAccessException e) {
+          if (result != null) {
+            result.error("setFocusModeFailed", "Error setting focus mode: " + e.getMessage(), null);
           }
-          break;
-        case auto:
-          // Cancel current AF trigger and set AF to idle again.
-          unlockAutoFocus();
-          break;
+          return;
+        }
+        break;
+      case auto:
+        // Cancel current AF trigger and set AF to idle again.
+        unlockAutoFocus();
+        break;
       }
     }
 

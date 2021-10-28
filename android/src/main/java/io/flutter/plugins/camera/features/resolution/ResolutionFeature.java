@@ -50,7 +50,8 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
    * @param cameraName       Camera identifier of the camera for which to
    *                         configure the resolution.
    */
-  public ResolutionFeature(CameraProperties cameraProperties, ResolutionPreset resolutionPreset, String cameraName) {
+  public ResolutionFeature(CameraProperties cameraProperties, ResolutionPreset resolutionPreset, String cameraName,
+      boolean isSquare) {
     super(cameraProperties);
     this.currentSetting = resolutionPreset;
     try {
@@ -59,7 +60,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
       this.cameraId = -1;
       return;
     }
-    configureResolution(resolutionPreset, cameraId);
+    configureResolution(resolutionPreset, cameraId, isSquare);
   }
 
   /**
@@ -119,7 +120,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   }
 
   @VisibleForTesting
-  static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset) {
+  static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset, boolean isSquare) {
     final String TAG = "Camera";
     if (preset.ordinal() > ResolutionPreset.high.ordinal()) {
       preset = ResolutionPreset.high;
@@ -128,6 +129,15 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
 
     Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
+
+    if (isSquare) {
+      Log.w(TAG, "isSquare" + profile.videoFrameWidth + "isSquare" + profile.videoFrameHeight);
+      if (profile.videoFrameWidth > profile.videoFrameHeight) {
+        return new Size(profile.videoFrameHeight, profile.videoFrameHeight);
+      } else {
+        return new Size(profile.videoFrameWidth, profile.videoFrameWidth);
+      }
+    }
 
     if (profile.videoFrameHeight / profile.videoFrameWidth != 0.75) {
       Log.w(TAG, "++++++" + profile.videoFrameWidth + "++++++" + profile.videoFrameHeight);
@@ -138,7 +148,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
   }
 
-  static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
+  static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap, boolean isSquare) {
     final String TAG = "Camera";
     // For still image captures, we use the largest available size.
     Size newCaptureSize = Collections.max(Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
@@ -148,10 +158,18 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getWidth());
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
+    if (isSquare) {
+      Log.w(TAG, "isSquare" + newCaptureSize.getWidth() + "isSquare" + newCaptureSize.getHeight());
+      if (newCaptureSize.getHeight() > newCaptureSize.getWidth()) {
+        return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth());
+      } else {
+        return new Size(newCaptureSize.getHeight(), newCaptureSize.getHeight());
+      }
+    }
+
     if (newCaptureSize.getHeight() / newCaptureSize.getWidth() != 0.75) {
       return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth() * 3 / 4);
     } else {
-
       return new Size(newCaptureSize.getWidth(), newCaptureSize.getHeight());
     }
   }
@@ -175,38 +193,38 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
 
     switch (preset) {
-      // All of these cases deliberately fall through to get the best available
-      // profile.
-      case max:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_HIGH)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_HIGH);
-        }
-      case ultraHigh:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_2160P)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_2160P);
-        }
-      case veryHigh:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_1080P)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_1080P);
-        }
-      case high:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_720P)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_720P);
-        }
-      case medium:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_480P)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_480P);
-        }
-      case low:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_QVGA)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_QVGA);
-        }
-      default:
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_LOW)) {
-          return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_LOW);
-        } else {
-          throw new IllegalArgumentException("No capture session available for current capture session.");
-        }
+    // All of these cases deliberately fall through to get the best available
+    // profile.
+    case max:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_HIGH)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_HIGH);
+      }
+    case ultraHigh:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_2160P)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_2160P);
+      }
+    case veryHigh:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_1080P)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_1080P);
+      }
+    case high:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_720P)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_720P);
+      }
+    case medium:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_480P)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_480P);
+      }
+    case low:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_QVGA)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_QVGA);
+      }
+    default:
+      if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_LOW)) {
+        return CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_LOW);
+      } else {
+        throw new IllegalArgumentException("No capture session available for current capture session.");
+      }
     }
   }
 
@@ -218,16 +236,16 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
   }
 
-  private void configureResolution(ResolutionPreset resolutionPreset, int cameraId) {
+  private void configureResolution(ResolutionPreset resolutionPreset, int cameraId, boolean isSquare) {
     final String TAG = "Camera";
     if (!checkIsSupported()) {
       return;
     }
 
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
-    captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap());
+    captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap(), isSquare);
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
-    previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
+    previewSize = computeBestPreviewSize(cameraId, resolutionPreset, isSquare);
   }
 }

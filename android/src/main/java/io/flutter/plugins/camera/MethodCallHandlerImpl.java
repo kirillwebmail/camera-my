@@ -377,6 +377,7 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler, Li
     String cameraName = call.argument("cameraName");
     String preset = call.argument("resolutionPreset");
     boolean enableAudio = call.argument("enableAudio");
+    boolean isSquare = call.argument("isSquare");
 
     TextureRegistry.SurfaceTextureEntry flutterSurfaceTexture =
         textureRegistry.createSurfaceTexture();
@@ -399,7 +400,7 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler, Li
             dartMessenger,
             cameraProperties,
             resolutionPreset,
-            enableAudio);
+            enableAudio,isSquare);
 
     if (lifecycle != null) {
       lifecycle.addObserver(camera);

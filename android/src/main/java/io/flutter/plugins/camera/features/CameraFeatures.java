@@ -24,8 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * These are all of our available features in the camera. Used in the Camera to access all features
- * in a simpler way.
+ * These are all of our available features in the camera. Used in the Camera to
+ * access all features in a simpler way.
  */
 public class CameraFeatures {
   private static final String AUTO_FOCUS = "AUTO_FOCUS";
@@ -41,35 +41,24 @@ public class CameraFeatures {
   private static final String SENSOR_ORIENTATION = "SENSOR_ORIENTATION";
   private static final String ZOOM_LEVEL = "ZOOM_LEVEL";
 
-  public static CameraFeatures init(
-      CameraFeatureFactory cameraFeatureFactory,
-      CameraProperties cameraProperties,
-      Activity activity,
-      DartMessenger dartMessenger,
-      ResolutionPreset resolutionPreset) {
+  public static CameraFeatures init(CameraFeatureFactory cameraFeatureFactory, CameraProperties cameraProperties,
+      Activity activity, DartMessenger dartMessenger, ResolutionPreset resolutionPreset, boolean isSquare) {
     CameraFeatures cameraFeatures = new CameraFeatures();
-    cameraFeatures.setAutoFocus(
-        cameraFeatureFactory.createAutoFocusFeature(cameraProperties, false));
-    cameraFeatures.setExposureLock(
-        cameraFeatureFactory.createExposureLockFeature(cameraProperties));
-    cameraFeatures.setExposureOffset(
-        cameraFeatureFactory.createExposureOffsetFeature(cameraProperties));
-    SensorOrientationFeature sensorOrientationFeature =
-        cameraFeatureFactory.createSensorOrientationFeature(
-            cameraProperties, activity, dartMessenger);
+    cameraFeatures.setAutoFocus(cameraFeatureFactory.createAutoFocusFeature(cameraProperties, false));
+    cameraFeatures.setExposureLock(cameraFeatureFactory.createExposureLockFeature(cameraProperties));
+    cameraFeatures.setExposureOffset(cameraFeatureFactory.createExposureOffsetFeature(cameraProperties));
+    SensorOrientationFeature sensorOrientationFeature = cameraFeatureFactory
+        .createSensorOrientationFeature(cameraProperties, activity, dartMessenger);
     cameraFeatures.setSensorOrientation(sensorOrientationFeature);
-    cameraFeatures.setExposurePoint(
-        cameraFeatureFactory.createExposurePointFeature(
-            cameraProperties, sensorOrientationFeature));
+    cameraFeatures
+        .setExposurePoint(cameraFeatureFactory.createExposurePointFeature(cameraProperties, sensorOrientationFeature));
     cameraFeatures.setFlash(cameraFeatureFactory.createFlashFeature(cameraProperties));
-    cameraFeatures.setFocusPoint(
-        cameraFeatureFactory.createFocusPointFeature(cameraProperties, sensorOrientationFeature));
+    cameraFeatures
+        .setFocusPoint(cameraFeatureFactory.createFocusPointFeature(cameraProperties, sensorOrientationFeature));
     cameraFeatures.setFpsRange(cameraFeatureFactory.createFpsRangeFeature(cameraProperties));
-    cameraFeatures.setNoiseReduction(
-        cameraFeatureFactory.createNoiseReductionFeature(cameraProperties));
-    cameraFeatures.setResolution(
-        cameraFeatureFactory.createResolutionFeature(
-            cameraProperties, resolutionPreset, cameraProperties.getCameraName()));
+    cameraFeatures.setNoiseReduction(cameraFeatureFactory.createNoiseReductionFeature(cameraProperties));
+    cameraFeatures.setResolution(cameraFeatureFactory.createResolutionFeature(cameraProperties, resolutionPreset,
+        cameraProperties.getCameraName(), isSquare));
     cameraFeatures.setZoomLevel(cameraFeatureFactory.createZoomLevelFeature(cameraProperties));
     return cameraFeatures;
   }
@@ -259,7 +248,8 @@ public class CameraFeatures {
   /**
    * Sets the instance of the sensor orientation feature.
    *
-   * @param sensorOrientation the {@link SensorOrientationFeature} instance to set.
+   * @param sensorOrientation the {@link SensorOrientationFeature} instance to
+   *                          set.
    */
   public void setSensorOrientation(SensorOrientationFeature sensorOrientation) {
     this.featureMap.put(SENSOR_ORIENTATION, sensorOrientation);

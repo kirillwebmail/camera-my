@@ -22,15 +22,14 @@ import io.flutter.plugins.camera.features.sensororientation.SensorOrientationFea
 import io.flutter.plugins.camera.features.zoomlevel.ZoomLevelFeature;
 
 /**
- * Implementation of the {@link CameraFeatureFactory} interface creating the supported feature
- * implementation controlling different aspects of the {@link
- * android.hardware.camera2.CaptureRequest}.
+ * Implementation of the {@link CameraFeatureFactory} interface creating the
+ * supported feature implementation controlling different aspects of the
+ * {@link android.hardware.camera2.CaptureRequest}.
  */
 public class CameraFeatureFactoryImpl implements CameraFeatureFactory {
 
   @Override
-  public AutoFocusFeature createAutoFocusFeature(
-      @NonNull CameraProperties cameraProperties, boolean recordingVideo) {
+  public AutoFocusFeature createAutoFocusFeature(@NonNull CameraProperties cameraProperties, boolean recordingVideo) {
     return new AutoFocusFeature(cameraProperties, recordingVideo);
   }
 
@@ -40,8 +39,7 @@ public class CameraFeatureFactoryImpl implements CameraFeatureFactory {
   }
 
   @Override
-  public ExposureOffsetFeature createExposureOffsetFeature(
-      @NonNull CameraProperties cameraProperties) {
+  public ExposureOffsetFeature createExposureOffsetFeature(@NonNull CameraProperties cameraProperties) {
     return new ExposureOffsetFeature(cameraProperties);
   }
 
@@ -51,16 +49,13 @@ public class CameraFeatureFactoryImpl implements CameraFeatureFactory {
   }
 
   @Override
-  public ResolutionFeature createResolutionFeature(
-      @NonNull CameraProperties cameraProperties,
-      ResolutionPreset initialSetting,
-      String cameraName) {
-    return new ResolutionFeature(cameraProperties, initialSetting, cameraName);
+  public ResolutionFeature createResolutionFeature(@NonNull CameraProperties cameraProperties,
+      ResolutionPreset initialSetting, String cameraName, boolean isSquare) {
+    return new ResolutionFeature(cameraProperties, initialSetting, cameraName, isSquare);
   }
 
   @Override
-  public FocusPointFeature createFocusPointFeature(
-      @NonNull CameraProperties cameraProperties,
+  public FocusPointFeature createFocusPointFeature(@NonNull CameraProperties cameraProperties,
       @NonNull SensorOrientationFeature sensorOrientationFeature) {
     return new FocusPointFeature(cameraProperties, sensorOrientationFeature);
   }
@@ -71,10 +66,8 @@ public class CameraFeatureFactoryImpl implements CameraFeatureFactory {
   }
 
   @Override
-  public SensorOrientationFeature createSensorOrientationFeature(
-      @NonNull CameraProperties cameraProperties,
-      @NonNull Activity activity,
-      @NonNull DartMessenger dartMessenger) {
+  public SensorOrientationFeature createSensorOrientationFeature(@NonNull CameraProperties cameraProperties,
+      @NonNull Activity activity, @NonNull DartMessenger dartMessenger) {
     return new SensorOrientationFeature(cameraProperties, activity, dartMessenger);
   }
 
@@ -84,15 +77,13 @@ public class CameraFeatureFactoryImpl implements CameraFeatureFactory {
   }
 
   @Override
-  public ExposurePointFeature createExposurePointFeature(
-      @NonNull CameraProperties cameraProperties,
+  public ExposurePointFeature createExposurePointFeature(@NonNull CameraProperties cameraProperties,
       @NonNull SensorOrientationFeature sensorOrientationFeature) {
     return new ExposurePointFeature(cameraProperties, sensorOrientationFeature);
   }
 
   @Override
-  public NoiseReductionFeature createNoiseReductionFeature(
-      @NonNull CameraProperties cameraProperties) {
+  public NoiseReductionFeature createNoiseReductionFeature(@NonNull CameraProperties cameraProperties) {
     return new NoiseReductionFeature(cameraProperties);
   }
 }
