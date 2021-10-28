@@ -20,8 +20,6 @@ flutter:
         pluginClass: CameraPlugin
 
 dependencies:
-  camera_platform_interface: 
-    path: ./camera_platform_interface
   flutter:
     sdk: flutter
   pedantic: ^1.10.0
@@ -35,3 +33,5 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.0.0
   video_player: ^2.0.0
+  camera_platform_interface: 
+    path: ./camera_platform_interface
