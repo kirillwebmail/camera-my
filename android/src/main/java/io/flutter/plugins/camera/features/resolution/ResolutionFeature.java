@@ -133,10 +133,11 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
 
     if (isSquare) {
-      Log.w(TAG, "isSquare" + profile.videoFrameWidth + "isSquare" + profile.videoFrameHeight);
       if (profile.videoFrameWidth > profile.videoFrameHeight) {
+        Log.w(TAG, "isSquare1" + profile.videoFrameHeight + "isSquare1" + profile.videoFrameHeight);
         return new Size(profile.videoFrameHeight, profile.videoFrameHeight);
       } else {
+        Log.w(TAG, "isSquare2" + profile.videoFrameWidth + "isSquare2" + profile.videoFrameWidth);
         return new Size(profile.videoFrameWidth, profile.videoFrameWidth);
       }
     }
@@ -161,10 +162,12 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
     if (isSquare) {
-      Log.w(TAG, "isSquare" + newCaptureSize.getWidth() + "isSquare" + newCaptureSize.getHeight());
+
       if (newCaptureSize.getHeight() > newCaptureSize.getWidth()) {
+        Log.w(TAG, "1isSquare" + newCaptureSize.getWidth() + "1isSquare" + newCaptureSize.getWidth());
         return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth());
       } else {
+        Log.w(TAG, "2isSquare" + newCaptureSize.getHeight() + "2isSquare" + newCaptureSize.getHeight());
         return new Size(newCaptureSize.getHeight(), newCaptureSize.getHeight());
       }
     }
