@@ -39,6 +39,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   private CamcorderProfile recordingProfile;
   private ResolutionPreset currentSetting;
   private int cameraId;
+  private boolean isSquare;
 
   /**
    * Creates a new instance of the {@link ResolutionFeature}.
@@ -54,6 +55,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
       boolean isSquare) {
     super(cameraProperties);
     this.currentSetting = resolutionPreset;
+    this.isSquare = isSquare;
     try {
       this.cameraId = Integer.parseInt(cameraName, 10);
     } catch (NumberFormatException e) {
@@ -105,7 +107,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   @Override
   public void setValue(ResolutionPreset value) {
     this.currentSetting = value;
-    configureResolution(currentSetting, cameraId);
+    configureResolution(currentSetting, cameraId, isSquare);
   }
 
   @Override
