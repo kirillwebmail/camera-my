@@ -22,7 +22,7 @@ flutter:
 
 dependencies:
   camera_platform_interface: 
-    path: ./third_party/camera_platform_interface
+    path: third_party/camera_platform_interface
   flutter:
     sdk: flutter
   pedantic: ^1.10.0
