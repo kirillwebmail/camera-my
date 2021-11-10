@@ -132,9 +132,9 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
     Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
 
-    if (isSquare) {
-      return new Size(profile.videoFrameHeight * 9 / 10, profile.videoFrameHeight);
-    }
+    // if (isSquare) {
+    // return new Size(profile.videoFrameHeight * 9 / 10, profile.videoFrameHeight);
+    // }
 
     if (profile.videoFrameHeight / profile.videoFrameWidth != 0.75) {
       Log.w(TAG, "++++++" + profile.videoFrameWidth + "++++++" + profile.videoFrameHeight);
@@ -156,7 +156,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
     if (isSquare) {
-      return new Size(newCaptureSize.getHeight() * 9 / 10, newCaptureSize.getHeight());
+      return new Size(newCaptureSize.getHeight() * 2, newCaptureSize.getHeight());
     }
 
     if (newCaptureSize.getHeight() / newCaptureSize.getWidth() != 0.75) {
