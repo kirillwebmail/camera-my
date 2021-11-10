@@ -478,6 +478,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
    */
   private void takePictureAfterPrecapture() {
     Log.i(TAG, "captureStillPicture");
+    Log.i(TAG, "isSquare");
     cameraCaptureCallback.setCameraState(CameraState.STATE_CAPTURING);
 
     if (cameraDevice == null) {
