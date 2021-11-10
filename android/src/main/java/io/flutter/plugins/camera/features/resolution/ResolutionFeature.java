@@ -156,7 +156,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
     if (isSquare) {
-      return new Size(newCaptureSize.getHeight() / 2, newCaptureSize.getHeight());
+      return new Size(newCaptureSize.getHeight() / 8, newCaptureSize.getHeight());
     }
 
     if (newCaptureSize.getHeight() / newCaptureSize.getWidth() != 0.75) {
