@@ -496,6 +496,9 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     // Zoom.
     Rect zoom = new Rect(500, 375, 1250, 1125);
     if (isSquare) {
+      Log.i(TAG, "***********");
+      Log.i(TAG, zoom);
+      Log.i(TAG, CaptureRequest.SCALER_CROP_REGION);
       stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, zoom);
     } else {
       stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, previewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
