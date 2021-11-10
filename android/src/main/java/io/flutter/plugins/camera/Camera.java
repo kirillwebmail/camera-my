@@ -9,7 +9,6 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.ImageFormat;
-import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
@@ -479,7 +478,6 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
    */
   private void takePictureAfterPrecapture() {
     Log.i(TAG, "captureStillPicture");
-    Log.i(TAG, "isSquare");
     cameraCaptureCallback.setCameraState(CameraState.STATE_CAPTURING);
 
     if (cameraDevice == null) {
@@ -496,13 +494,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     stillBuilder.addTarget(pictureImageReader.getSurface());
 
     // Zoom.
-    Rect zoom = new Rect(500, 375, 1250, 1125);
-    if (isSquare) {
-      Log.i(TAG, "***********");
-      stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, zoom);
-    } else {
-      stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, previewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
-    }
+    stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, previewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
 
     // Have all features update the builder.
     updateBuilderSettings(stillBuilder);
