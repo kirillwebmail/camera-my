@@ -494,7 +494,12 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     stillBuilder.addTarget(pictureImageReader.getSurface());
 
     // Zoom.
-    stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, previewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
+    Rect zoom = new Rect(500, 375, 1250, 1125);
+    if (isSquare) {
+      stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, zoom);
+    } else {
+      stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, previewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
+    }
 
     // Have all features update the builder.
     updateBuilderSettings(stillBuilder);
