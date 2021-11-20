@@ -70,12 +70,13 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
       return;
     }
 
-    final Rect computedZoom = ZoomUtils.computeZoom(currentSetting, sensorArraySize, MINIMUM_ZOOM_LEVEL,
-        maximumZoomLevel);
-    Log.i("Camera", "wwwwwwwwwwwwww");
+    // final Rect computedZoom = ZoomUtils.computeZoom(currentSetting,
+    // sensorArraySize, MINIMUM_ZOOM_LEVEL,
+    // maximumZoomLevel);
+    final Rect computedZoom = new Rect(250, 0, 1500, 1500);
+    Log.i("Camera", "wwwwwwwwwwwwwwssss");
     Log.i("Camera", computedZoom.toString());
-    Log.i("Camera", Rect(250, 0, 1500, 1500).toString());
-    requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, Rect(250, 0, 1500, 1500));
+    requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
   }
 
   /**
