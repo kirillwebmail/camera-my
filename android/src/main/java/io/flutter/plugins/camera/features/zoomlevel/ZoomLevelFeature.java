@@ -5,11 +5,14 @@
 package io.flutter.plugins.camera.features.zoomlevel;
 
 import android.graphics.Rect;
+import android.util.Log;
 import android.hardware.camera2.CaptureRequest;
 import io.flutter.plugins.camera.CameraProperties;
 import io.flutter.plugins.camera.features.CameraFeature;
 
-/** Controls the zoom configuration on the {@link android.hardware.camera2} API. */
+/**
+ * Controls the zoom configuration on the {@link android.hardware.camera2} API.
+ */
 public class ZoomLevelFeature extends CameraFeature<Float> {
   private static final float MINIMUM_ZOOM_LEVEL = 1.0f;
   private final boolean hasSupport;
@@ -20,7 +23,8 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
   /**
    * Creates a new instance of the {@link ZoomLevelFeature}.
    *
-   * @param cameraProperties Collection of characteristics for the current camera device.
+   * @param cameraProperties Collection of characteristics for the current camera
+   *                         device.
    */
   public ZoomLevelFeature(CameraProperties cameraProperties) {
     super(cameraProperties);
@@ -34,10 +38,8 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
     }
 
     Float maxDigitalZoom = cameraProperties.getScalerAvailableMaxDigitalZoom();
-    maximumZoomLevel =
-        ((maxDigitalZoom == null) || (maxDigitalZoom < MINIMUM_ZOOM_LEVEL))
-            ? MINIMUM_ZOOM_LEVEL
-            : maxDigitalZoom;
+    maximumZoomLevel = ((maxDigitalZoom == null) || (maxDigitalZoom < MINIMUM_ZOOM_LEVEL)) ? MINIMUM_ZOOM_LEVEL
+        : maxDigitalZoom;
 
     hasSupport = (Float.compare(maximumZoomLevel, MINIMUM_ZOOM_LEVEL) > 0);
   }
@@ -68,9 +70,10 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
       return;
     }
 
-    final Rect computedZoom =
-        ZoomUtils.computeZoom(
-            currentSetting, sensorArraySize, MINIMUM_ZOOM_LEVEL, maximumZoomLevel);
+    final Rect computedZoom = ZoomUtils.computeZoom(currentSetting, sensorArraySize, MINIMUM_ZOOM_LEVEL,
+        maximumZoomLevel);
+    Log.i("Camera", "wwwwwwwwwwwwww");
+    Log.i("Camera", computedZoom);
     requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
   }
 
