@@ -72,14 +72,29 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
 
     final Rect computedZoom2 = ZoomUtils.computeZoom(currentSetting, sensorArraySize, MINIMUM_ZOOM_LEVEL,
         maximumZoomLevel);
-    final Rect computedZoom = new Rect(0, 0, 1500, 1500);
-    Log.i("Camera", "wwwwwwwwwwwwwwssss");
-    Log.i("Camera sensorArraySize", sensorArraySize.toString());
-    Log.i("Camera w", Integer.toString(sensorArraySize.width()));
-    Log.i("Camera h", Integer.toString(sensorArraySize.height()));
-    Log.i("Camera computedZoom2", computedZoom2.toString());
-    Log.i("Camera", computedZoom.toString());
-    requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
+    if (sensorArraySize.height() > sensorArraySize.width()) {
+      final int varieties = sensorArraySize.height() - sensorArraySize.width();
+      final int bottomValue = sensorArraySize.height() - varieties;
+      final Rect computedZoom = new Rect(0, varieties / 2, sensorArraySize.width(), bottomValue);
+      Log.i("Camera", "wwwwwwwwwwwwwwssss");
+      Log.i("Camera sensorArraySize", sensorArraySize.toString());
+      Log.i("Camera w", Integer.toString(sensorArraySize.width()));
+      Log.i("Camera h", Integer.toString(sensorArraySize.height()));
+      Log.i("Camera computedZoom2", computedZoom2.toString());
+      Log.i("Camera", computedZoom.toString());
+      requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
+    } else {
+      final int varieties = sensorArraySize.width() - sensorArraySize.height();
+      final int bottomValue = sensorArraySize.width() - varieties;
+      final Rect computedZoom = new Rect(0, varieties / 2, sensorArraySize.height(), bottomValue);
+      Log.i("Camera", "wwwwwwwwwwwwwwssss");
+      Log.i("Camera sensorArraySize", sensorArraySize.toString());
+      Log.i("Camera w", Integer.toString(sensorArraySize.width()));
+      Log.i("Camera h", Integer.toString(sensorArraySize.height()));
+      Log.i("Camera computedZoom2", computedZoom2.toString());
+      Log.i("Camera", computedZoom.toString());
+      requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
+    }
   }
 
   /**
