@@ -14,7 +14,7 @@ import io.flutter.plugins.camera.features.CameraFeature;
  * Controls the zoom configuration on the {@link android.hardware.camera2} API.
  */
 public class ZoomLevelFeature extends CameraFeature<Float> {
-  private static final float MINIMUM_ZOOM_LEVEL = 2.6f;
+  private static final float MINIMUM_ZOOM_LEVEL = 1.0f;
   private final boolean hasSupport;
   private final Rect sensorArraySize;
   private Float currentSetting = MINIMUM_ZOOM_LEVEL;
@@ -72,32 +72,29 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
 
     final Rect computedZoom2 = ZoomUtils.computeZoom(currentSetting, sensorArraySize, MINIMUM_ZOOM_LEVEL,
         maximumZoomLevel);
-    // if (sensorArraySize.height() > sensorArraySize.width()) {
-    // final int varieties = sensorArraySize.height() - sensorArraySize.width();
-    // final int bottomValue = sensorArraySize.height() - varieties / 2;
-    // final Rect computedZoom = new Rect(0, varieties / 2, bottomValue,
-    // sensorArraySize.width());
-    // Log.i("Camera", "wwwwwwwwwwwwwwssss");
-    // Log.i("Camera sensorArraySize", sensorArraySize.toString());
-    // Log.i("Camera w", Integer.toString(sensorArraySize.width()));
-    // Log.i("Camera h", Integer.toString(sensorArraySize.height()));
-    // Log.i("Camera computedZoom2", computedZoom2.toString());
-    // Log.i("Camera", computedZoom.toString());
-    // requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
-    // } else {
-    // final int varieties = sensorArraySize.width() - sensorArraySize.height();
-    // final int bottomValue = sensorArraySize.width() - varieties / 2;
-    // final Rect computedZoom = new Rect(0, varieties / 2, bottomValue,
-    // sensorArraySize.height());
-    // Log.i("Camera", "wwwwwwwwwwwwwwssss");
-    // Log.i("Camera sensorArraySize", sensorArraySize.toString());
-    // Log.i("Camera w", Integer.toString(sensorArraySize.width()));
-    // Log.i("Camera h", Integer.toString(sensorArraySize.height()));
-    // Log.i("Camera computedZoom2", computedZoom2.toString());
-    // Log.i("Camera", computedZoom.toString());
-    // requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
-    // }
-    requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom2);
+    if (sensorArraySize.height() > sensorArraySize.width()) {
+      final int varieties = sensorArraySize.height() - sensorArraySize.width();
+      final int bottomValue = sensorArraySize.height() - varieties / 2;
+      final Rect computedZoom = new Rect(0, varieties / 2, bottomValue, sensorArraySize.width());
+      Log.i("Camera", "wwwwwwwwwwwwwwssss");
+      Log.i("Camera sensorArraySize", sensorArraySize.toString());
+      Log.i("Camera w", Integer.toString(sensorArraySize.width()));
+      Log.i("Camera h", Integer.toString(sensorArraySize.height()));
+      Log.i("Camera computedZoom2", computedZoom2.toString());
+      Log.i("Camera", computedZoom.toString());
+      requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
+    } else {
+      final int varieties = sensorArraySize.width() - sensorArraySize.height();
+      final int bottomValue = sensorArraySize.width() - varieties / 2;
+      final Rect computedZoom = new Rect(0, varieties / 2, bottomValue, sensorArraySize.height());
+      Log.i("Camera", "wwwwwwwwwwwwwwssss");
+      Log.i("Camera sensorArraySize", sensorArraySize.toString());
+      Log.i("Camera w", Integer.toString(sensorArraySize.width()));
+      Log.i("Camera h", Integer.toString(sensorArraySize.height()));
+      Log.i("Camera computedZoom2", computedZoom2.toString());
+      Log.i("Camera", computedZoom.toString());
+      requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
+    }
   }
 
   /**
