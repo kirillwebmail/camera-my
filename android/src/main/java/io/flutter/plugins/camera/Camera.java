@@ -498,6 +498,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     stillBuilder.addTarget(pictureImageReader.getSurface());
 
     // Zoom.
+    Log.i("heyyyyyyyyyyyyyyyy", CaptureRequest.SCALER_CROP_REGION.toString());
     stillBuilder.set(CaptureRequest.SCALER_CROP_REGION, previewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
 
     // Have all features update the builder.
