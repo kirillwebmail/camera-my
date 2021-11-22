@@ -130,13 +130,13 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
 
-    Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
-
     if (isSquare) {
-      if (profile.videoFrameHeight > profile.videoFrameWidth) {
-        return new Size(profile.videoFrameWidth, profile.videoFrameWidth);
+      CamcorderProfile profileSquare = CamcorderProfile.get(cameraId, CamcorderProfile.QUALITY_HIGH_SPEED_480P);
+      Log.w(TAG, "--------" + profileSquare.videoFrameWidth + "-------" + profileSquare.videoFrameHeight);
+      if (profileSquare.videoFrameHeight > profileSquare.videoFrameWidth) {
+        return new Size(profileSquare.videoFrameWidth, profileSquare.videoFrameWidth);
       } else {
-        return new Size(profile.videoFrameHeight, profile.videoFrameHeight);
+        return new Size(profileSquare.videoFrameHeight, profileSquare.videoFrameHeight);
       }
     }
 
