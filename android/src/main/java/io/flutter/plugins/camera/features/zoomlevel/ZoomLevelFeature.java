@@ -74,7 +74,7 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
         maximumZoomLevel);
     if (sensorArraySize.height() > sensorArraySize.width()) {
       final int varieties = sensorArraySize.height() - sensorArraySize.width();
-      final int bottomValue = sensorArraySize.height() - varieties;
+      final int bottomValue = sensorArraySize.height() - varieties / 2;
       final Rect computedZoom = new Rect(0, varieties / 2, sensorArraySize.width(), bottomValue);
       Log.i("Camera", "wwwwwwwwwwwwwwssss");
       Log.i("Camera sensorArraySize", sensorArraySize.toString());
@@ -85,7 +85,7 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
       requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
     } else {
       final int varieties = sensorArraySize.width() - sensorArraySize.height();
-      final int bottomValue = sensorArraySize.width() - varieties;
+      final int bottomValue = sensorArraySize.width() - varieties / 2;
       final Rect computedZoom = new Rect(0, varieties / 2, sensorArraySize.height(), bottomValue);
       Log.i("Camera", "wwwwwwwwwwwwwwssss");
       Log.i("Camera sensorArraySize", sensorArraySize.toString());
