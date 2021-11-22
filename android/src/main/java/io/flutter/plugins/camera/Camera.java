@@ -318,6 +318,8 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
         resolutionFeature.getPreviewSize().getHeight());
     Surface flutterSurface = new Surface(surfaceTexture);
     previewRequestBuilder.addTarget(flutterSurface);
+    Log.w(TAG, "fffffffff" + resolutionFeature.getPreviewSize().getWidth() + "ffffffffff"
+        + resolutionFeature.getPreviewSize().getHeight());
 
     List<Surface> remainingSurfaces = Arrays.asList(surfaces);
     if (templateType != CameraDevice.TEMPLATE_PREVIEW) {
@@ -362,12 +364,14 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
       for (Surface surface : remainingSurfaces) {
         configs.add(new OutputConfiguration(surface));
       }
+      Log.w(TAG, "createCaptureSessionWithSessionConfig");
       createCaptureSessionWithSessionConfig(configs, callback);
     } else {
       // Collect all surfaces to render to.
       List<Surface> surfaceList = new ArrayList<>();
       surfaceList.add(flutterSurface);
       surfaceList.addAll(remainingSurfaces);
+      Log.w(TAG, "createCaptureSession");
       createCaptureSession(surfaceList, callback);
     }
   }
