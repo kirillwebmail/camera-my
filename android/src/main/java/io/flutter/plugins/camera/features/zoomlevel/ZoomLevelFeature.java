@@ -14,7 +14,7 @@ import io.flutter.plugins.camera.features.CameraFeature;
  * Controls the zoom configuration on the {@link android.hardware.camera2} API.
  */
 public class ZoomLevelFeature extends CameraFeature<Float> {
-  private static final float MINIMUM_ZOOM_LEVEL = 0.5f;
+  private static final float MINIMUM_ZOOM_LEVEL = 2.6f;
   private final boolean hasSupport;
   private final Rect sensorArraySize;
   private Float currentSetting = MINIMUM_ZOOM_LEVEL;
