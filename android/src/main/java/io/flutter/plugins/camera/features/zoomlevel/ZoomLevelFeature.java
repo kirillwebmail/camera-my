@@ -75,8 +75,8 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
     final Rect computedZoom = new Rect(0, 0, 1500, 1500);
     Log.i("Camera", "wwwwwwwwwwwwwwssss");
     Log.i("Camera sensorArraySize", sensorArraySize.toString());
-    Log.i("Camera w", sensorArraySize.width().toString());
-    Log.i("Camera h", sensorArraySize.height().toString());
+    Log.i("Camera w", sensorArraySize.width());
+    Log.i("Camera h", sensorArraySize.height());
     Log.i("Camera computedZoom2", computedZoom2.toString());
     Log.i("Camera", computedZoom.toString());
     requestBuilder.set(CaptureRequest.SCALER_CROP_REGION, computedZoom);
