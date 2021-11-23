@@ -39,7 +39,6 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   private CamcorderProfile recordingProfile;
   private ResolutionPreset currentSetting;
   private int cameraId;
-  private boolean isSquare;
 
   /**
    * Creates a new instance of the {@link ResolutionFeature}.
@@ -51,18 +50,16 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
    * @param cameraName       Camera identifier of the camera for which to
    *                         configure the resolution.
    */
-  public ResolutionFeature(CameraProperties cameraProperties, ResolutionPreset resolutionPreset, String cameraName,
-      boolean isSquare) {
+  public ResolutionFeature(CameraProperties cameraProperties, ResolutionPreset resolutionPreset, String cameraName) {
     super(cameraProperties);
     this.currentSetting = resolutionPreset;
-    this.isSquare = isSquare;
     try {
       this.cameraId = Integer.parseInt(cameraName, 10);
     } catch (NumberFormatException e) {
       this.cameraId = -1;
       return;
     }
-    configureResolution(resolutionPreset, cameraId, isSquare);
+    configureResolution(resolutionPreset, cameraId);
   }
 
   /**
@@ -107,7 +104,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   @Override
   public void setValue(ResolutionPreset value) {
     this.currentSetting = value;
-    configureResolution(currentSetting, cameraId, isSquare);
+    configureResolution(currentSetting, cameraId);
   }
 
   @Override
@@ -122,7 +119,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
   }
 
   @VisibleForTesting
-  static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset, boolean isSquare) {
+  static Size computeBestPreviewSize(int cameraId, ResolutionPreset preset) {
     final String TAG = "Camera";
     if (preset.ordinal() > ResolutionPreset.high.ordinal()) {
       preset = ResolutionPreset.high;
@@ -130,13 +127,21 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
 
     CamcorderProfile profile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, preset);
 
-    if (isSquare) {
-      if (profile.videoFrameHeight > profile.videoFrameWidth) {
-        Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
-        return new Size(profile.videoFrameWidth, profile.videoFrameWidth);
-      } else {
-        return new Size(profile.videoFrameHeight, profile.videoFrameHeight);
-      }
+    // if (isSquare) {
+    // if (profile.videoFrameHeight > profile.videoFrameWidth) {
+    // Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" +
+    // profile.videoFrameHeight);
+    // return new Size(profile.videoFrameWidth, profile.videoFrameWidth);
+    // } else {
+    // return new Size(profile.videoFrameHeight, profile.videoFrameHeight);
+    // }
+    // }
+
+    if (profile.videoFrameHeight > profile.videoFrameWidth) {
+      Log.w(TAG, "--------" + profile.videoFrameWidth + "-------" + profile.videoFrameHeight);
+      return new Size(profile.videoFrameWidth, profile.videoFrameWidth);
+    } else {
+      return new Size(profile.videoFrameHeight, profile.videoFrameHeight);
     }
 
     if (profile.videoFrameHeight / profile.videoFrameWidth != 0.75) {
@@ -148,7 +153,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
   }
 
-  static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap, boolean isSquare) {
+  static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
     final String TAG = "Camera";
     // For still image captures, we use the largest available size.
     Size newCaptureSize = Collections.max(Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
@@ -158,12 +163,18 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     Log.w(TAG, "000000   " + newCaptureSize.getWidth());
     Log.w(TAG, "000000   " + newCaptureSize.getHeight());
 
-    if (isSquare) {
-      if (newCaptureSize.getHeight() < newCaptureSize.getWidth()) {
-        return new Size(newCaptureSize.getHeight(), newCaptureSize.getHeight());
-      } else {
-        return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth());
-      }
+    // if (isSquare) {
+    // if (newCaptureSize.getHeight() < newCaptureSize.getWidth()) {
+    // return new Size(newCaptureSize.getHeight(), newCaptureSize.getHeight());
+    // } else {
+    // return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth());
+    // }
+    // }
+
+    if (newCaptureSize.getHeight() < newCaptureSize.getWidth()) {
+      return new Size(newCaptureSize.getHeight(), newCaptureSize.getHeight());
+    } else {
+      return new Size(newCaptureSize.getWidth(), newCaptureSize.getWidth());
     }
 
     if (newCaptureSize.getHeight() / newCaptureSize.getWidth() != 0.75) {
@@ -235,16 +246,16 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
   }
 
-  private void configureResolution(ResolutionPreset resolutionPreset, int cameraId, boolean isSquare) {
+  private void configureResolution(ResolutionPreset resolutionPreset, int cameraId) {
     final String TAG = "Camera";
     if (!checkIsSupported()) {
       return;
     }
 
     recordingProfile = getBestAvailableCamcorderProfileForResolutionPreset(cameraId, resolutionPreset);
-    captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap(), isSquare);
+    captureSize = computeBestCaptureSize(cameraProperties.getAvailableScalerStreamConfigurationMap());
     // captureSize = new Size(recordingProfile.videoFrameWidth,
     // recordingProfile.videoFrameHeight);
-    previewSize = computeBestPreviewSize(cameraId, resolutionPreset, isSquare);
+    previewSize = computeBestPreviewSize(cameraId, resolutionPreset);
   }
 }

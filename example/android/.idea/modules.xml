@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/579472382/android.camera.iml" filepath="$PROJECT_DIR$/.idea/modules/579472382/android.camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/730357768/android.flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/730357768/android.flutter_plugin_android_lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/477816364/android.integration_test.iml" filepath="$PROJECT_DIR$/.idea/modules/477816364/android.integration_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-119980276/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-119980276/android.path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1934021440/android.path_provider_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/1934021440/android.path_provider_linux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1704897665/android.path_provider_macos.iml" filepath="$PROJECT_DIR$/.idea/modules/-1704897665/android.path_provider_macos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1793818960/android.path_provider_windows.iml" filepath="$PROJECT_DIR$/.idea/modules/1793818960/android.path_provider_windows.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1515344070/android.video_player.iml" filepath="$PROJECT_DIR$/.idea/modules/-1515344070/android.video_player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1998381263/android.video_player_web.iml" filepath="$PROJECT_DIR$/.idea/modules/-1998381263/android.video_player_web.iml" />
+    </modules>
+  </component>
+</project>

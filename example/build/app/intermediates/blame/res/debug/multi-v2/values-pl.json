@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kirillkaluznyj/_Projects/camera-my/example/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
+            "outputFile": "/Volumes/Samsung_T5/_Projects/camera-my/example/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "/Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/values-pl/values-pl.xml",

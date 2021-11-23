@@ -225,7 +225,6 @@ class CameraController extends ValueNotifier<CameraValue> {
     this.resolutionPreset, {
     this.enableAudio = true,
     this.imageFormatGroup,
-    this.isSquare = false,
   }) : super(const CameraValue.uninitialized());
 
   /// The properties of the camera device controlled by this controller.
@@ -241,7 +240,6 @@ class CameraController extends ValueNotifier<CameraValue> {
 
   /// Whether to include audio when recording a video.
   final bool enableAudio;
-  final bool isSquare;
 
   /// The [ImageFormatGroup] describes the output of the raw image format.
   ///
@@ -292,7 +290,6 @@ class CameraController extends ValueNotifier<CameraValue> {
         description,
         resolutionPreset,
         enableAudio: enableAudio,
-        isSquare: isSquare,
       );
 
       unawaited(CameraPlatform.instance
