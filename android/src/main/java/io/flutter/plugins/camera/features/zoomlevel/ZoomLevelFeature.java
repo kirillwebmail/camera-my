@@ -75,7 +75,7 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
     if (sensorArraySize.height() > sensorArraySize.width()) {
       final int varieties = sensorArraySize.height() - sensorArraySize.width();
       final int bottomValue = sensorArraySize.height() - varieties / 2;
-      final Rect computedZoom = new Rect(varieties / 2, 0, sensorArraySize.width(), bottomValue);
+      final Rect computedZoom = new Rect(0, varieties / 2, sensorArraySize.width(), bottomValue);
       Log.i("Camera", "wwwwwwwwwwwwwwssss");
       Log.i("Camera sensorArraySize", sensorArraySize.toString());
       Log.i("Camera w", Integer.toString(sensorArraySize.width()));
@@ -86,7 +86,7 @@ public class ZoomLevelFeature extends CameraFeature<Float> {
     } else {
       final int varieties = sensorArraySize.width() - sensorArraySize.height();
       final int bottomValue = sensorArraySize.width() - varieties / 2;
-      final Rect computedZoom = new Rect(varieties / 2, 0, sensorArraySize.height(), bottomValue);
+      final Rect computedZoom = new Rect(0, varieties / 2, sensorArraySize.height(), bottomValue);
       Log.i("Camera", "wwwwwwwwwwwwwwssss");
       Log.i("Camera sensorArraySize", sensorArraySize.toString());
       Log.i("Camera w", Integer.toString(sensorArraySize.width()));
