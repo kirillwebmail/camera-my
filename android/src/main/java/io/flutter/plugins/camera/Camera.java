@@ -954,7 +954,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
 
     backgroundHandler.post(new ImageSaver(
         // Use acquireNextImage since image reader is only for one image.
-        reader.acquireNextImage(), captureFile, new ImageSaver.Callback(), isSquare {
+        reader.acquireNextImage(), captureFile, new ImageSaver.Callback() {
           @Override
           public void onComplete(String absolutePath) {
             dartMessenger.finish(flutterResult, absolutePath);
@@ -964,7 +964,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
           public void onError(String errorCode, String errorMessage) {
             dartMessenger.error(flutterResult, errorCode, errorMessage, null);
           }
-        }));
+        }, isSquare));
     cameraCaptureCallback.setCameraState(CameraState.STATE_PREVIEW);
   }
 
