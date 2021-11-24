@@ -157,7 +157,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
     this.cameraProperties = cameraProperties;
     this.cameraFeatureFactory = cameraFeatureFactory;
     this.cameraFeatures = CameraFeatures.init(cameraFeatureFactory, cameraProperties, activity, dartMessenger,
-        resolutionPreset, isSquare);
+        resolutionPreset);
 
     // Create capture callback.
     captureTimeouts = new CaptureTimeoutsWrapper(3000, 3000);
@@ -954,7 +954,7 @@ class Camera implements CameraCaptureCallback.CameraCaptureStateListener, ImageR
 
     backgroundHandler.post(new ImageSaver(
         // Use acquireNextImage since image reader is only for one image.
-        reader.acquireNextImage(), captureFile, new ImageSaver.Callback() {
+        reader.acquireNextImage(), captureFile, new ImageSaver.Callback(), isSquare {
           @Override
           public void onComplete(String absolutePath) {
             dartMessenger.finish(flutterResult, absolutePath);
