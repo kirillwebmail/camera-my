@@ -42,7 +42,7 @@ public class CameraFeatures {
   private static final String ZOOM_LEVEL = "ZOOM_LEVEL";
 
   public static CameraFeatures init(CameraFeatureFactory cameraFeatureFactory, CameraProperties cameraProperties,
-      Activity activity, DartMessenger dartMessenger, ResolutionPreset resolutionPreset, boolean isSquare) {
+      Activity activity, DartMessenger dartMessenger, ResolutionPreset resolutionPreset) {
     CameraFeatures cameraFeatures = new CameraFeatures();
     cameraFeatures.setAutoFocus(cameraFeatureFactory.createAutoFocusFeature(cameraProperties, false));
     cameraFeatures.setExposureLock(cameraFeatureFactory.createExposureLockFeature(cameraProperties));
@@ -58,7 +58,7 @@ public class CameraFeatures {
     cameraFeatures.setFpsRange(cameraFeatureFactory.createFpsRangeFeature(cameraProperties));
     cameraFeatures.setNoiseReduction(cameraFeatureFactory.createNoiseReductionFeature(cameraProperties));
     cameraFeatures.setResolution(cameraFeatureFactory.createResolutionFeature(cameraProperties, resolutionPreset,
-        cameraProperties.getCameraName(), isSquare));
+        cameraProperties.getCameraName()));
     cameraFeatures.setZoomLevel(cameraFeatureFactory.createZoomLevelFeature(cameraProperties));
     return cameraFeatures;
   }
