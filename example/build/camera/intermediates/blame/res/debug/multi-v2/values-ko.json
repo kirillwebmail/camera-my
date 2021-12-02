@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
+            "outputFile": "C:\\Users\\darkw\\Documents\\GitHub\\camera-my\\example\\build\\camera\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ko\\values-ko.xml",
             "map": [
                 {
-                    "source": "/Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/values-ko/values-ko.xml",
+                    "source": "C:\\Users\\darkw\\.gradle\\caches\\transforms-2\\files-2.1\\6b399c2363bb098ebde1725d903cbda0\\core-1.1.0\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/res/merged/debug/values-ko/values-ko.xml",
+            "outputFile": "C:\\Users\\darkw\\Documents\\GitHub\\camera-my\\example\\build\\camera\\intermediates\\res\\merged\\debug\\values-ko\\values-ko.xml",
             "map": [
                 {
-                    "source": "/Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/values-ko/values-ko.xml",
+                    "source": "C:\\Users\\darkw\\.gradle\\caches\\transforms-2\\files-2.1\\6b399c2363bb098ebde1725d903cbda0\\core-1.1.0\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -9,6 +9,7 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:image_crop/image_crop.dart';
 import 'package:video_player/video_player.dart';
 
 class CameraExampleHome extends StatefulWidget {
@@ -45,6 +46,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   CameraController? controller;
   XFile? imageFile;
   XFile? videoFile;
+  File? small;
   VideoPlayerController? videoController;
   VoidCallback? videoPlayerListener;
   bool enableAudio = true;
@@ -231,7 +233,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
                 ? Container()
                 : SizedBox(
                     child: (localVideoController == null)
-                        ? Image.file(File(imageFile!.path))
+                        ? small != null ? Image.file(small!, fit: BoxFit.cover): Container()
                         : Container(
                             child: Center(
                               child: AspectRatio(
@@ -658,14 +660,29 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   }
 
   void onTakePictureButtonPressed() {
-    takePicture().then((XFile? file) {
+    takePicture().then((XFile? file) async {
       if (mounted) {
         setState(() {
           imageFile = file;
           videoController?.dispose();
           videoController = null;
         });
-        if (file != null) showInSnackBar('Picture saved to ${file.path}');
+        if (file != null) {
+          showInSnackBar('Picture saved to ${file.path}');
+          final permissionsGranted = await ImageCrop.requestPermissions();
+          final sample = await ImageCrop.sampleImage(
+            file: File(file.path),
+            preferredSize: 200
+          );
+          final crop = await ImageCrop.cropImage(
+            file: sample,
+            area: Rect.fromLTRB(0.1, 0.25, 0.3, 0.35),
+          );
+          setState(() {
+            small = crop;
+          });
+          print(crop);
+        }
       }
     });
   }

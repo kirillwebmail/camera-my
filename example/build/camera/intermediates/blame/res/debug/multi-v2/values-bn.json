@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/res/merged/debug/values-bn/values-bn.xml",
+            "outputFile": "C:\\Users\\darkw\\Documents\\GitHub\\camera-my\\example\\build\\camera\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
             "map": [
                 {
-                    "source": "/Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/values-bn/values-bn.xml",
+                    "source": "C:\\Users\\darkw\\.gradle\\caches\\transforms-2\\files-2.1\\6b399c2363bb098ebde1725d903cbda0\\core-1.1.0\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/kirillkaluznyj/_Projects/camera-my/example/build/camera/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml",
+            "outputFile": "C:\\Users\\darkw\\Documents\\GitHub\\camera-my\\example\\build\\camera\\intermediates\\res\\merged\\debug\\values-bn\\values-bn.xml",
             "map": [
                 {
-                    "source": "/Users/kirillkaluznyj/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/res/values-bn/values-bn.xml",
+                    "source": "C:\\Users\\darkw\\.gradle\\caches\\transforms-2\\files-2.1\\6b399c2363bb098ebde1725d903cbda0\\core-1.1.0\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
